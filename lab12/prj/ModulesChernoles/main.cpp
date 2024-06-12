@@ -11,7 +11,7 @@ public:
     // Конструктор
     ClassLab12_Chernoles(double r, std::string c) : radius(r), color(c) {}
 
-    // Сеттеры
+    // Сеттери
     void setRadius(double r) {
         if (r > 0) {
             radius = r;
@@ -22,7 +22,7 @@ public:
         color = c;
     }
 
-    // Геттеры
+    // Геттери
     double getRadius() const {
         return radius;
     }
@@ -31,19 +31,19 @@ public:
         return color;
     }
 
-    // Метод для вычисления площади
+    // Метод для вичислення площі
     double calculateArea() const {
         return M_PI * radius * radius;
     }
 
-    // Метод для изменения площади и обновления радиуса
+    // Метод для змінення площі і обновлення радіуса
     void setArea(double area) {
         if (area > 0) {
             radius = std::sqrt(area / M_PI);
         }
     }
 
-    // Метод для изменения значения заданного атрибута
+    // Метод для змінення значення заданого атрибута
     void updateAttribute(const std::string& attributeName, const std::string& value) {
         if (attributeName == "color") {
             setColor(value);
@@ -69,21 +69,21 @@ int main() {
     double radius;
     std::string color;
 
-    // Ввод данных пользователем
+    // Ввод даних пользователем
     std::cout << "Enter radius: ";
     std::cin >> radius;
-    std::cin.ignore(); // Чтобы игнорировать оставшийся символ новой строки
+    std::cin.ignore(); // Щоб ігнорувати останній символ нової строки
     std::cout << "Enter color: ";
     std::getline(std::cin, color);
 
-    // Создание объекта класса с введенными данными
+    // Створення об'єкта класа с введеними даними
     ClassLab12_Chernoles obj(radius, color);
 
-    // Вывод значений атрибутов
+    // Вивід значення атрибутів
     std::cout << "Radius: " << obj.getRadius() << std::endl;
     std::cout << "Color: " << obj.getColor() << std::endl;
 
-    // Вычисление и вывод площади
+    // Обчислення и вивід площі
     std::cout << "Area: " << obj.calculateArea() << std::endl;
 
     return 0;
